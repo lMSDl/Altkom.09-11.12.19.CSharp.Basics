@@ -19,22 +19,42 @@ namespace Altkom._09_11._12._19.CSharp.Basics.ConsoleProgram
             string line;
             do
             {
-                foreach (var item in Collection)
-                {
-                    Console.WriteLine(item);
-                }
+                WriteLine(string.Join("\n", Collection));
+                
                 line = Console.ReadLine();
-
                 switch(line)
                 {
+                    case "add":
+                        NewPerson();
+                        break;
                     case "exit":
-                        return;
+                        break;
                     default:
-                        Console.WriteLine("Nieznana komenda");
+                        Console.WriteLine("Nieznana komenda...");
+                        Console.ReadKey();
                         break;
                 }
             }
             while (line != "exit");
+        }
+
+        static void NewPerson()
+        {
+            var person = new Person();
+            WriteLine(nameof(Person.FirstName));
+            person.FirstName = Console.ReadLine();
+
+            WriteLine(nameof(Person.LastName));
+            person.LastName = Console.ReadLine();
+
+            Collection.Add(person);
+        }
+
+        static void WriteLine(string line)
+        {
+            Console.Clear();
+            Console.WriteLine(line);
+            Console.WriteLine();
         }
     }
 }
