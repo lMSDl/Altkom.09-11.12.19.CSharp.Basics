@@ -13,6 +13,8 @@ namespace Altkom._09_11._12._19.CSharp.Basics.ConsoleProgram.Models
         public Person()
         {
             Id = ++Counter;
+            var random = new Random();
+            BirthDate = new DateTime(random.Next(1950, 2000), random.Next(1, 12), random.Next(1, 28));
         }
 
         public int Id { get; }
