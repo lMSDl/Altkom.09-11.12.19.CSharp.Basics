@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Altkom._09_11._12._19.CSharp.Basics.ConsoleProgram.Models
 {
-    public class Person
+    public class Person : IComparable<Person>
     {
         private static int Counter = 0;
 
@@ -19,6 +19,11 @@ namespace Altkom._09_11._12._19.CSharp.Basics.ConsoleProgram.Models
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public DateTime BirthDate { get; set; }
+
+        public int CompareTo(Person other)
+        {
+            return LastName.CompareTo(other.LastName);
+        }
 
         public override string ToString()
         {

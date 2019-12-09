@@ -1,6 +1,7 @@
 ﻿
 using Altkom._09_11._12._19.CSharp.Basics.ConsoleProgram.Models;
 using System;
+using System.Linq;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -10,15 +11,16 @@ namespace Altkom._09_11._12._19.CSharp.Basics.ConsoleProgram
     {
         private static List<Person> Collection =
             new List<Person>() {
-                new Person() { FirstName = "Adam", LastName = "Adamski", BirthDate = new DateTime(2000, 11, 12) },
-                new Person() { FirstName = "Piotr", LastName = "Piotrowski", BirthDate = new DateTime(1967, 1, 22) } };
+                new Person() { FirstName = "Piotr", LastName = "Piotrowski", BirthDate = new DateTime(1967, 1, 22) },
+                new Person() { FirstName = "Adam", LastName = "Adamski", BirthDate = new DateTime(2000, 11, 12) }};
 
         static void Main(string[] args)
         {
             string line;
             do
             {
-                WriteLine(string.Join("\n", Collection));
+                //Collection.Sort();
+                WriteLine(string.Join("\n", Collection.OrderBy(x => x.LastName)));
                 
                 line = Console.ReadLine();
                 switch(line)
