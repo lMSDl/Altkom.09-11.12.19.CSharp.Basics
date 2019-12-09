@@ -16,12 +16,25 @@ namespace Altkom._09_11._12._19.CSharp.Basics.ConsoleProgram
 
         static void Main(string[] args)
         {
-            for (int i = 0; i < Collection.Count; i++)
+            string line;
+            do
             {
-                Console.WriteLine($"{Collection[i].LastName} {Collection[i].FirstName}");
-            }
+                foreach (var item in Collection)
+                {
+                    Console.WriteLine(item);
+                }
+                line = Console.ReadLine();
 
-            Console.ReadKey();
+                switch(line)
+                {
+                    case "exit":
+                        return;
+                    default:
+                        Console.WriteLine("Nieznana komenda");
+                        break;
+                }
+            }
+            while (line != "exit");
         }
     }
 }
