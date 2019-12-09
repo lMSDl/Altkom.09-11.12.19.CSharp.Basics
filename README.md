@@ -1,6 +1,6 @@
 # Pomocne skróty klawiszowe Visual Studio
 
-* Ctrl+.(kropka) lub Alt+Enter - wyświetlenie menu szybkich akji
+* Ctrl+.(kropka) lub Alt+Enter - wyświetlenie menu szybkich akcji
 * Ctrl+Spacja lub Ctrl+j - wyświetlenie menu uzupełniania kodu
 * Ctrl+kliknięcie lub F12 - przejście do definicji zaznaczonego symbolu w kodzie
 * Ctrl+Tab - przełączanie się między otwartymi kartami (plikami z kodem)
