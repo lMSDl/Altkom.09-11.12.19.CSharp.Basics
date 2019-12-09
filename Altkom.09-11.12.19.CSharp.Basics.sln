@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.902
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Altkom.09-11.12.19.CSharp.Basics.ConsoleProgram", "Altkom.09-11.12.19.CSharp.Basics.ConsoleProgram\Altkom.09-11.12.19.CSharp.Basics.ConsoleProgram.csproj", "{BE7634B1-0BF7-43FB-A356-B8E03C776389}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BE7634B1-0BF7-43FB-A356-B8E03C776389}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE7634B1-0BF7-43FB-A356-B8E03C776389}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE7634B1-0BF7-43FB-A356-B8E03C776389}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE7634B1-0BF7-43FB-A356-B8E03C776389}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4ECD1B03-E5D9-4461-B9FE-2BD75291BAE8}
+	EndGlobalSection
+EndGlobal
