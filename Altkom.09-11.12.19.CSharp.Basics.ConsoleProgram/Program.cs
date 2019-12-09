@@ -10,9 +10,8 @@ namespace Altkom._09_11._12._19.CSharp.Basics.ConsoleProgram
     {
         private static List<Person> Collection =
             new List<Person>() {
-                new Person() { FirstName = "Adam", LastName = "Adamski" },
-                new Person() { FirstName = "Piotr", LastName = "Piotrowski" },
-                new Person() };
+                new Person() { FirstName = "Adam", LastName = "Adamski", BirthDate = new DateTime(2000, 11, 12) },
+                new Person() { FirstName = "Piotr", LastName = "Piotrowski", BirthDate = new DateTime(1967, 1, 22) } };
 
         static void Main(string[] args)
         {
