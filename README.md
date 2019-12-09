@@ -1,4 +1,4 @@
-# Pomocne sktóry klawiszowe Visual Studio
+# Pomocne skróty klawiszowe Visual Studio
 
 Ctrl+.(kropka) lub Alt+Enter - wyświetlenie menu szybkich akji
 Ctrl+Spacja lub Ctrl+j - wyświetlenie menu uzupełniania kodu
