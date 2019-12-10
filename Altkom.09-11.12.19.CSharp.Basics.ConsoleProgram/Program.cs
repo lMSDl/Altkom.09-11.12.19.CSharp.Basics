@@ -7,9 +7,9 @@ using System.Collections.Generic;
 
 namespace Altkom._09_11._12._19.CSharp.Basics.ConsoleProgram
 {
-    class Program
+    public class Program
     {
-        public static Program() {
+        static Program() {
             var random = new Random();
             Collection = new List<Person>() {
                 new Person() { FirstName = "Kevin", LastName = "Liu" },
@@ -25,8 +25,6 @@ namespace Altkom._09_11._12._19.CSharp.Basics.ConsoleProgram
                 new Person() { FirstName = "Vijay", LastName = "Sundaram" },
                 new Person() { FirstName = "Chris", LastName = "Meyer" },
                 new Person() { FirstName = "Eric", LastName = "Gruber" },
-                new Person() { FirstName = "Piotr", LastName = "Piotrowski" },
-                new Person() { FirstName = "Chris", LastName = "Meyer" },
                 new Person() { FirstName = "Yuhong", LastName = "Li" },
                 new Person() { FirstName = "Yan", LastName = "Li" },
                 new Person() { FirstName = "Piotr", LastName = "Piotrowski" },
@@ -40,8 +38,8 @@ namespace Altkom._09_11._12._19.CSharp.Basics.ConsoleProgram
             string line;
             do
             {
-                //Collection.Sort();
-                WriteLine(string.Join("\n", Collection.OrderBy(x => x.LastName)));
+                Collection.Sort();
+                WriteLine(string.Join("\n", Collection));
                 
                 line = Console.ReadLine();
                 switch(line)
