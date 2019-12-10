@@ -40,7 +40,24 @@ namespace Altkom._09_11._12._19.CSharp.Basics.ConsoleProgram
             {
                 Collection.Sort();
                 WriteLine(string.Join("\n", Collection));
+
+                //var filteredCollection = Collection.Where(x => x is Instructor).ToList();
+                //var filteredCollection = Collection.OfType<Instructor>().ToList();
+                //var filteredCollection = (from person in Collection where person is Instructor select person).ToList();
+
+                //var filteredCollection = Collection.Where(x => x is Student).Cast<Student>().Where(x => x.AverageGrade > 3.5f).ToList();
+                //var filteredCollection = Collection.OfType<Student>().Where(x => x.AverageGrade > 3.5f).ToList();
+                //var filteredCollection = (from person in Collection where person is Student where ((Student)person).AverageGrade > 3.5f select person).ToList();
+
+                //var filteredCollection = Collection.Where(x => x.LastName.Contains("x")).ToList();
+                //var filteredCollection = (from person in Collection where person.LastName.Contains("x") select person).ToList();
                 
+                //WriteLine(string.Join("\n", filteredCollection));
+
+                //Przykład krotki: var krotka = new {identifier = Collection[0].Id, Collection[0].LastName };
+
+
+
                 line = Console.ReadLine();
                 switch(line)
                 {
