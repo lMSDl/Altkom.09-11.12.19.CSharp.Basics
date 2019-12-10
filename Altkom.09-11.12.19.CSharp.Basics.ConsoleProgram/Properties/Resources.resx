@@ -120,7 +120,13 @@
   <data name="HelloWorld" xml:space="preserve">
     <value>Hello World!</value>
   </data>
+  <data name="InputDataFailed" xml:space="preserve">
+    <value>Niepowodzenie przy odczycie danych dla pola {0}</value>
+  </data>
   <data name="UnknownCommand" xml:space="preserve">
     <value>Nieznana komenda...</value>
+  </data>
+  <data name="WrongCommand" xml:space="preserve">
+    <value>Błędna komenda...</value>
   </data>
 </root>

@@ -88,7 +88,7 @@ namespace Altkom._09_11._12._19.CSharp.Basics.ConsoleProgram
                             catch (Exception e)
                             {
                                 Debug.Write(e);
-                                Console.WriteLine("Błędna komenda...");
+                                Console.WriteLine(Resources.WrongCommand);
                                 Console.ReadKey();
                             }
 
@@ -111,7 +111,7 @@ namespace Altkom._09_11._12._19.CSharp.Basics.ConsoleProgram
                 catch (InputDataException e)
                 {
                     Debug.Write(e);
-                    WriteLine($"Niepowodzenie przy odczycie danych dla pola {e.FieldName}");
+                    WriteLine(string.Format(Resources.InputDataFailed, e.FieldName));
                     Console.ReadKey();
                 }
                 catch (Exception e)

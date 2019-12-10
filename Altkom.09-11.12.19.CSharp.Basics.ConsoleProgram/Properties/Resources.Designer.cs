@@ -70,11 +70,29 @@ namespace Altkom._09_11._12._19.CSharp.Basics.ConsoleProgram.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Niepowodzenie przy odczycie danych dla pola {0}.
+        /// </summary>
+        internal static string InputDataFailed {
+            get {
+                return ResourceManager.GetString("InputDataFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Nieznana komenda....
         /// </summary>
         internal static string UnknownCommand {
             get {
                 return ResourceManager.GetString("UnknownCommand", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Błędna komenda....
+        /// </summary>
+        internal static string WrongCommand {
+            get {
+                return ResourceManager.GetString("WrongCommand", resourceCulture);
             }
         }
     }
