@@ -68,5 +68,14 @@ namespace Altkom._09_11._12._19.CSharp.Basics.ConsoleProgram.Properties {
                 return ResourceManager.GetString("HelloWorld", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nieznana komenda....
+        /// </summary>
+        internal static string UnknownCommand {
+            get {
+                return ResourceManager.GetString("UnknownCommand", resourceCulture);
+            }
+        }
     }
 }

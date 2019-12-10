@@ -7,11 +7,20 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Windows.Forms;
 using Altkom._09_11._12._19.CSharp.Basics.ConsoleProgram.Exceptions;
+using Altkom._09_11._12._19.CSharp.Basics.ConsoleProgram.Properties;
 
 namespace Altkom._09_11._12._19.CSharp.Basics.ConsoleProgram
 {
     public class Program
     {
+        enum Commands
+        {
+            Add = 100,
+            Delete,
+            Edit = 200,
+            Exit
+        }
+
         static Program() {
             var random = new Random();
             Collection = new List<Person>() {
@@ -39,6 +48,7 @@ namespace Altkom._09_11._12._19.CSharp.Basics.ConsoleProgram
         static void Main(string[] args)
         {
             string line;
+            Commands command;
             do
             {
                 Collection.Sort();
@@ -62,11 +72,14 @@ namespace Altkom._09_11._12._19.CSharp.Basics.ConsoleProgram
                 line = Console.ReadLine();
                 var splitedLine = line.Split(' ');
                 int id;
+
+
+                Enum.TryParse<Commands>(splitedLine[0], true, out command);
                 try
                 {
-                    switch (splitedLine[0])
+                    switch (command)
                     {
-                        case "delete":
+                        case Commands.Delete:
                             try
                             {
                                 id = int.Parse(splitedLine[1]);
@@ -80,17 +93,17 @@ namespace Altkom._09_11._12._19.CSharp.Basics.ConsoleProgram
                             }
 
                             break;
-                        case "edit":
+                        case Commands.Edit:
                             id = int.Parse(splitedLine[1]);
                             EditPerson(Collection.Single(x => x.Id == id));
                             break;
-                        case "add":
+                        case Commands.Add:
                             NewPerson();
                             break;
-                        case "exit":
+                        case Commands.Exit:
                             break;
                         default:
-                            Console.WriteLine("Nieznana komenda...");
+                            Console.WriteLine(Resources.UnknownCommand);
                             Console.ReadKey();
                             break;
                     }
@@ -106,16 +119,13 @@ namespace Altkom._09_11._12._19.CSharp.Basics.ConsoleProgram
                     Debug.Write(e);
                 }
             }
-            while (line != "exit");
+            while (command != Commands.Exit);
         }
 
         static void EditPerson(Person person)
         {
             WriteLine(nameof(Person.FirstName));
-            for (int i = 0; i < 100; i++)
-            {
-                SendKeys.SendWait(person.FirstName);
-            }
+            SendKeys.SendWait(person.FirstName);
             person.FirstName = Console.ReadLine();
 
             WriteLine(nameof(Person.LastName));
@@ -132,8 +142,9 @@ namespace Altkom._09_11._12._19.CSharp.Basics.ConsoleProgram
             {
                 throw new InputDataException(nameof(Person.BirthDate));
             }
-
         }
+
+
 
         static void NewPerson()
         {
