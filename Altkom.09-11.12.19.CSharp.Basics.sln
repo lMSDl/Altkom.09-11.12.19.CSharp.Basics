@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28307.902
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Altkom.09-11.12.19.CSharp.Basics.ConsoleProgram", "Altkom.09-11.12.19.CSharp.Basics.ConsoleProgram\Altkom.09-11.12.19.CSharp.Basics.ConsoleProgram.csproj", "{BE7634B1-0BF7-43FB-A356-B8E03C776389}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Altkom.09-11.12.2019.CSharp.Basics.Models", "Altkom.09-11.12.2019.CSharp.Basics.Models\Altkom.09-11.12.2019.CSharp.Basics.Models.csproj", "{89422C0B-F98A-40DE-904E-BF3B8D2A43B8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{BE7634B1-0BF7-43FB-A356-B8E03C776389}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BE7634B1-0BF7-43FB-A356-B8E03C776389}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BE7634B1-0BF7-43FB-A356-B8E03C776389}.Release|Any CPU.Build.0 = Release|Any CPU
+		{89422C0B-F98A-40DE-904E-BF3B8D2A43B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{89422C0B-F98A-40DE-904E-BF3B8D2A43B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{89422C0B-F98A-40DE-904E-BF3B8D2A43B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{89422C0B-F98A-40DE-904E-BF3B8D2A43B8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
