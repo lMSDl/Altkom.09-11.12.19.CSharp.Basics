@@ -5,6 +5,7 @@ using System.Linq;
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Windows.Forms;
 using Altkom._09_11._12._19.CSharp.Basics.ConsoleProgram.Exceptions;
 
 namespace Altkom._09_11._12._19.CSharp.Basics.ConsoleProgram
@@ -60,7 +61,7 @@ namespace Altkom._09_11._12._19.CSharp.Basics.ConsoleProgram
                 
                 line = Console.ReadLine();
                 var splitedLine = line.Split(' ');
-
+                int id;
                 try
                 {
                     switch (splitedLine[0])
@@ -68,7 +69,7 @@ namespace Altkom._09_11._12._19.CSharp.Basics.ConsoleProgram
                         case "delete":
                             try
                             {
-                                var id = int.Parse(splitedLine[1]);
+                                id = int.Parse(splitedLine[1]);
                                 DeletePerson(id);
                             }
                             catch (Exception e)
@@ -78,6 +79,10 @@ namespace Altkom._09_11._12._19.CSharp.Basics.ConsoleProgram
                                 Console.ReadKey();
                             }
 
+                            break;
+                        case "edit":
+                            id = int.Parse(splitedLine[1]);
+                            EditPerson(Collection.Single(x => x.Id == id));
                             break;
                         case "add":
                             NewPerson();
@@ -104,17 +109,21 @@ namespace Altkom._09_11._12._19.CSharp.Basics.ConsoleProgram
             while (line != "exit");
         }
 
-        static void NewPerson()
+        static void EditPerson(Person person)
         {
-            var person = new Person();
             WriteLine(nameof(Person.FirstName));
+            for (int i = 0; i < 100; i++)
+            {
+                SendKeys.SendWait(person.FirstName);
+            }
             person.FirstName = Console.ReadLine();
 
             WriteLine(nameof(Person.LastName));
+            SendKeys.SendWait(person.LastName);
             person.LastName = Console.ReadLine();
 
-
             WriteLine(nameof(Person.BirthDate));
+            SendKeys.SendWait(person.BirthDate.ToShortDateString());
             try
             {
                 person.BirthDate = DateTime.Parse(Console.ReadLine());
@@ -124,6 +133,12 @@ namespace Altkom._09_11._12._19.CSharp.Basics.ConsoleProgram
                 throw new InputDataException(nameof(Person.BirthDate));
             }
 
+        }
+
+        static void NewPerson()
+        {
+            var person = new Person();
+            EditPerson(person);
             Collection.Add(person);
         }
         
