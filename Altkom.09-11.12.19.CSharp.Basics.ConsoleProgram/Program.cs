@@ -8,6 +8,7 @@ using System.Diagnostics;
 using System.Windows.Forms;
 using Altkom._09_11._12._19.CSharp.Basics.ConsoleProgram.Exceptions;
 using Altkom._09_11._12._19.CSharp.Basics.ConsoleProgram.Properties;
+using Altkom._09_11._12._2019.CSharp.Basics.Models;
 
 namespace Altkom._09_11._12._19.CSharp.Basics.ConsoleProgram
 {
@@ -26,19 +27,19 @@ namespace Altkom._09_11._12._19.CSharp.Basics.ConsoleProgram
             Collection = new List<Person>() {
                 new Instructor(lastName: "Liu", firstName: "Kevin", specialization: "Programming"),
                 new Person("Martin", lastName: "Weber"),
-                new Person("George", "Li", new DateTime(1966, 3, 13)),
                 new Student("Lisa", "Miller", 4.5f),
                 new Student("Run", "Liu" , 4.9992f),
                 new Student("Sean", "Stewart", 3.9f ),
                 new Student("Olinda", "Turner", 4.25f),
                 new Person() { FirstName = "Jon", LastName = "Orton" },
                 new Person() { FirstName = "Toby", LastName = "Nixon" },
-                new Person() { FirstName = "Daniela", LastName = "Guinot" },
-                new Person() { FirstName = "Vijay", LastName = "Sundaram" },
+                new Person() { FirstName = "Daniela", LastName = "Meyer" },
+                new Person() { FirstName = "Vijay", LastName = "Meyer" },
                 new Person() { FirstName = "Chris", LastName = "Meyer" },
                 new Person() { FirstName = "Eric", LastName = "Gruber" },
-                new Person() { FirstName = "Yuhong", LastName = "Li" },
-                new Person() { FirstName = "Yan", LastName = "Li" },
+                new Student("Yuhong", "Li", 3.5f ),
+                new Student("Yan", "Li", 4.5f),
+                new Student("George", "Li", 4.5f),
                 new Person() { FirstName = "Piotr", LastName = "Piotrowski" },
                 new Person() { FirstName = "Adam", LastName = "Adamski" }};
         }
