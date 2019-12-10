@@ -4,6 +4,7 @@ using System;
 using System.Linq;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 
 namespace Altkom._09_11._12._19.CSharp.Basics.ConsoleProgram
 {
@@ -51,16 +52,19 @@ namespace Altkom._09_11._12._19.CSharp.Basics.ConsoleProgram
 
                 //var filteredCollection = Collection.Where(x => x.LastName.Contains("x")).ToList();
                 //var filteredCollection = (from person in Collection where person.LastName.Contains("x") select person).ToList();
-                
+
                 //WriteLine(string.Join("\n", filteredCollection));
 
                 //Przykład krotki: var krotka = new {identifier = Collection[0].Id, Collection[0].LastName };
-
-
-
+                
                 line = Console.ReadLine();
-                switch(line)
+                var splitedLine = line.Split(' ');
+                switch(splitedLine[0])
                 {
+                    case "delete":
+                        var id = int.Parse(splitedLine[1]);
+                        DeletePerson(id);
+                        break;
                     case "add":
                         NewPerson();
                         break;
@@ -85,6 +89,19 @@ namespace Altkom._09_11._12._19.CSharp.Basics.ConsoleProgram
             person.LastName = Console.ReadLine();
 
             Collection.Add(person);
+        }
+
+        static void DeletePerson(int id)
+        {
+            Collection.RemoveAll(x => x.Id == id);
+
+            //var item = Collection.SingleOrDefault(x => x.Id == id);
+            //if (item != null)
+            //    Collection.Remove(item);
+            
+            //var itemIndex = Collection.FindIndex(x => x.Id == id);
+            //if (itemIndex >= 0)
+            //    Collection.RemoveAt(itemIndex);
         }
 
         static void WriteLine(string line)
