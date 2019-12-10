@@ -5,6 +5,7 @@ using System.Linq;
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
+using Altkom._09_11._12._19.CSharp.Basics.ConsoleProgram.Exceptions;
 
 namespace Altkom._09_11._12._19.CSharp.Basics.ConsoleProgram
 {
@@ -59,21 +60,45 @@ namespace Altkom._09_11._12._19.CSharp.Basics.ConsoleProgram
                 
                 line = Console.ReadLine();
                 var splitedLine = line.Split(' ');
-                switch(splitedLine[0])
+
+                try
                 {
-                    case "delete":
-                        var id = int.Parse(splitedLine[1]);
-                        DeletePerson(id);
-                        break;
-                    case "add":
-                        NewPerson();
-                        break;
-                    case "exit":
-                        break;
-                    default:
-                        Console.WriteLine("Nieznana komenda...");
-                        Console.ReadKey();
-                        break;
+                    switch (splitedLine[0])
+                    {
+                        case "delete":
+                            try
+                            {
+                                var id = int.Parse(splitedLine[1]);
+                                DeletePerson(id);
+                            }
+                            catch (Exception e)
+                            {
+                                Debug.Write(e);
+                                Console.WriteLine("Błędna komenda...");
+                                Console.ReadKey();
+                            }
+
+                            break;
+                        case "add":
+                            NewPerson();
+                            break;
+                        case "exit":
+                            break;
+                        default:
+                            Console.WriteLine("Nieznana komenda...");
+                            Console.ReadKey();
+                            break;
+                    }
+                }
+                catch (InputDataException e)
+                {
+                    Debug.Write(e);
+                    WriteLine($"Niepowodzenie przy odczycie danych dla pola {e.FieldName}");
+                    Console.ReadKey();
+                }
+                catch (Exception e)
+                {
+                    Debug.Write(e);
                 }
             }
             while (line != "exit");
@@ -88,9 +113,20 @@ namespace Altkom._09_11._12._19.CSharp.Basics.ConsoleProgram
             WriteLine(nameof(Person.LastName));
             person.LastName = Console.ReadLine();
 
+
+            WriteLine(nameof(Person.BirthDate));
+            try
+            {
+                person.BirthDate = DateTime.Parse(Console.ReadLine());
+            }
+            catch (Exception e)
+            {
+                throw new InputDataException(nameof(Person.BirthDate));
+            }
+
             Collection.Add(person);
         }
-
+        
         static void DeletePerson(int id)
         {
             Collection.RemoveAll(x => x.Id == id);

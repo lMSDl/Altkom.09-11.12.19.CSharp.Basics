@@ -72,6 +72,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Exceptions\InputDataException.cs" />
     <Compile Include="Models\Class.cs" />
     <Compile Include="Models\IStudent.cs" />
     <Compile Include="Models\IInstructor.cs" />
