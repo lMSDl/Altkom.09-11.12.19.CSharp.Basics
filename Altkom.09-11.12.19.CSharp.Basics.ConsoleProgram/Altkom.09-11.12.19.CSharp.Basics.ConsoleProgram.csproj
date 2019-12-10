@@ -72,6 +72,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\Class.cs" />
+    <Compile Include="Models\IInstructor.cs" />
+    <Compile Include="Models\Instructor.cs" />
     <Compile Include="Models\Person.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

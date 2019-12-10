@@ -12,9 +12,9 @@ namespace Altkom._09_11._12._19.CSharp.Basics.ConsoleProgram
         static Program() {
             var random = new Random();
             Collection = new List<Person>() {
-                new Person() { FirstName = "Kevin", LastName = "Liu" },
-                new Person() { FirstName = "Martin", LastName = "Weber" },
-                new Person() { FirstName = "George", LastName = "Li" },
+                new Instructor(lastName: "Liu", firstName: "Kevin", specialization: "Programming"),
+                new Person("Martin", lastName: "Weber"),
+                new Person("George", "Li", new DateTime(1966, 3, 13)),
                 new Person() { FirstName = "Lisa", LastName = "Miller" },
                 new Person() { FirstName = "Run", LastName = "Liu" },
                 new Person() { FirstName = "Sean", LastName = "Stewart" },

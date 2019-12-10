@@ -13,8 +13,19 @@ namespace Altkom._09_11._12._19.CSharp.Basics.ConsoleProgram.Models
         public Person()
         {
             Id = ++Counter;
-            var random = new Random();
+            var random = new Random(Id);
             BirthDate = new DateTime(random.Next(1950, 2000), random.Next(1, 12), random.Next(1, 28));
+        }
+
+        public Person(string firstName, string lastName) : this()
+        {
+            FirstName = firstName;
+            LastName = lastName;
+        }
+
+        public Person(string firstName, string lastName, DateTime birthDate) : this(firstName, lastName)
+        {
+            BirthDate = birthDate;
         }
 
         public int Id { get; }
@@ -29,7 +40,8 @@ namespace Altkom._09_11._12._19.CSharp.Basics.ConsoleProgram.Models
 
         public override string ToString()
         {
-            return string.Format("{0, -3} {1, -15} {2, -15} {3, -10}", Id, FirstName, LastName, BirthDate.ToShortDateString());
+            string format = $"{{0, {3}}} {{1, -15}} {{2, -15}} {{3, -10}}";
+            return string.Format(format, Id, FirstName, LastName, BirthDate.ToShortDateString());
         }
     }
 }
