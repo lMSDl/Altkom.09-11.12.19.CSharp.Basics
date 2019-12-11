@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.902
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Altkom.09-11.12.19.CSharp.Basics.ConsoleProgram", "Altkom.09-11.12.19.CSharp.Basics.ConsoleProgram\Altkom.09-11.12.19.CSharp.Basics.ConsoleProgram.csproj", "{BE7634B1-0BF7-43FB-A356-B8E03C776389}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleProgram", "Altkom.09-11.12.19.CSharp.Basics.ConsoleProgram\ConsoleProgram.csproj", "{BE7634B1-0BF7-43FB-A356-B8E03C776389}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Altkom.09-11.12.2019.CSharp.Basics.Models", "Altkom.09-11.12.2019.CSharp.Basics.Models\Altkom.09-11.12.2019.CSharp.Basics.Models.csproj", "{89422C0B-F98A-40DE-904E-BF3B8D2A43B8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Models", "Altkom.09-11.12.2019.CSharp.Basics.Models\Models.csproj", "{89422C0B-F98A-40DE-904E-BF3B8D2A43B8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
