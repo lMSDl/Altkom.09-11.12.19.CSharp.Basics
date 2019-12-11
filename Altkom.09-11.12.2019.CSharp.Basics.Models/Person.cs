@@ -1,4 +1,5 @@
 ﻿using Altkom._09_11._12._2019.CSharp.Basics.Models;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,13 +28,22 @@ namespace Altkom._09_11._12._19.CSharp.Basics.ConsoleProgram.Models
             BirthDate = birthDate;
         }
 
+        [JsonIgnore]
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public DateTime BirthDate { get; set; }
+        public int SomeInt { get; set; }
+
+        public bool ShouldSerializeBirthDate()
+        {
+            return BirthDate > new DateTime(1975, 1, 1);
+        }
 
         public virtual int CompareTo(Person other)
         {
-            return LastName.CompareTo(other.LastName);
+           //var result = LastName == null ? null : LastName.CompareTo(other.LastName);
+           //return result.HasValue ? result.Value : 0;
+           return LastName?.CompareTo(other.LastName) ?? 0;
         }
 
         public override int GetSomeInt()

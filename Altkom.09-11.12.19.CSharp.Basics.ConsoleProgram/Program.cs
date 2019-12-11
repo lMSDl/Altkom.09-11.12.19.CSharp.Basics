@@ -9,6 +9,8 @@ using System.Windows.Forms;
 using Altkom._09_11._12._19.CSharp.Basics.ConsoleProgram.Exceptions;
 using Altkom._09_11._12._19.CSharp.Basics.ConsoleProgram.Properties;
 using Altkom._09_11._12._2019.CSharp.Basics.Models;
+using Altkom._09_11._12._19.CSharp.Basics.ConsoleProgram.Formatters;
+using System.IO;
 
 namespace Altkom._09_11._12._19.CSharp.Basics.ConsoleProgram
 {
@@ -19,7 +21,10 @@ namespace Altkom._09_11._12._19.CSharp.Basics.ConsoleProgram
             Add = 100,
             Delete,
             Edit = 200,
-            Exit
+            Exit,
+            ToJson,
+
+            ToXml
         }
 
         static Program() {
@@ -41,11 +46,13 @@ namespace Altkom._09_11._12._19.CSharp.Basics.ConsoleProgram
                 new Student("Yan", "Li", 4.5f),
                 new Student("George", "Li", 4.5f),
                 new Person() { FirstName = "Piotr", LastName = "Piotrowski" },
-                new Person() { FirstName = "Adam", LastName = "Adamski" }};
+                new Person() { FirstName = "Adam", LastName = "Adamski" },
+                new Person() { FirstName = "Piotr", LastName = null }};
         }
         
         private static List<Person> Collection;
-            
+
+        [STAThread]
         static void Main(string[] args)
         {
             string line;
@@ -80,6 +87,56 @@ namespace Altkom._09_11._12._19.CSharp.Basics.ConsoleProgram
                 {
                     switch (command)
                     {
+                        case Commands.ToJson:
+                            var formatter = new JsonFormatter();
+                            string json;
+                            if (splitedLine.Length > 1)
+                            {
+                                id = int.Parse(splitedLine[1]);
+                                json = formatter.ToJson(Collection.SingleOrDefault(x => x.Id == id));
+                            }
+                            else
+                            {
+                                json = formatter.ToJson(Collection);
+                                //Collection.Clear();
+                                //WriteLine(string.Join("\n", Collection));
+                                //Console.ReadKey();
+                                //ollection = formatter.FromJson<List<Person>>(json);
+                                //WriteLine(formatter.ToJson(Collection));
+                            }
+                            WriteLine(json);
+                            Console.ReadKey();
+
+                            var dialog = new SaveFileDialog
+                            {
+                                Filter = "Json files|*.json",
+                                FileName = "data"
+                            };
+                            var result = dialog.ShowDialog();
+                            if (result == DialogResult.OK)
+                            {
+                                using (var file = new FileStream(dialog.FileName, FileMode.CreateNew))
+                                {
+                                    using (var streamWriter = new StreamWriter(file))
+                                        streamWriter.Write(json);
+                                }
+
+                            }
+
+                            break;
+                        case Commands.ToXml:
+                            var xmlFormatter = new XmlFormatter();
+                            if (splitedLine.Length > 1)
+                            {
+                                id = int.Parse(splitedLine[1]);
+                                WriteLine(xmlFormatter.ToXml(Collection.SingleOrDefault(x => x.Id == id)));
+                            }
+                            else
+                            {
+                                WriteLine(xmlFormatter.ToXml(Collection));
+                            }
+                            Console.ReadKey();
+                            break;
                         case Commands.Delete:
                             try
                             {
