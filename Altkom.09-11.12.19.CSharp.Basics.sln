@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsyncDemo", "Altkom.09-11.1
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SOLID", "Altkom.09-11.12.2019.CSharp.Basics.SOLID\SOLID.csproj", "{3A1E1CFB-E9BA-472C-B532-45C5B5D6D96D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Altkom.09-11.12.2019.CSharp.Basics.Db.Models", "Altkom.09-11.12.2019.CSharp.Basics.Db.Models\Altkom.09-11.12.2019.CSharp.Basics.Db.Models.csproj", "{253FE94F-C453-4B99-AFEA-CA1E833FE961}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Altkom.09-11.12.2019.CSharp.Basics.Db.DAL", "Altkom.09-11.12.2019.CSharp.Basics.Db.DAL\Altkom.09-11.12.2019.CSharp.Basics.Db.DAL.csproj", "{09D1B8EB-F78E-41F4-B049-8C1DA1EC441A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +37,14 @@ Global
 		{3A1E1CFB-E9BA-472C-B532-45C5B5D6D96D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3A1E1CFB-E9BA-472C-B532-45C5B5D6D96D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3A1E1CFB-E9BA-472C-B532-45C5B5D6D96D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{253FE94F-C453-4B99-AFEA-CA1E833FE961}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{253FE94F-C453-4B99-AFEA-CA1E833FE961}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{253FE94F-C453-4B99-AFEA-CA1E833FE961}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{253FE94F-C453-4B99-AFEA-CA1E833FE961}.Release|Any CPU.Build.0 = Release|Any CPU
+		{09D1B8EB-F78E-41F4-B049-8C1DA1EC441A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{09D1B8EB-F78E-41F4-B049-8C1DA1EC441A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{09D1B8EB-F78E-41F4-B049-8C1DA1EC441A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{09D1B8EB-F78E-41F4-B049-8C1DA1EC441A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
