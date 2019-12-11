@@ -23,7 +23,7 @@ namespace Altkom._09_11._12._19.CSharp.Basics.ConsoleProgram
             Edit = 200,
             Exit,
             ToJson,
-
+            FromJson,
             ToXml
         }
 
@@ -122,6 +122,24 @@ namespace Altkom._09_11._12._19.CSharp.Basics.ConsoleProgram
                                 }
 
                             }
+
+                            break;
+                        case Commands.FromJson:
+                            string jsonFromFile = null;
+                            var openDialog = new OpenFileDialog
+                            {
+                                Filter = "Json files|*.json",
+                            };
+                            var openDialogResult = openDialog.ShowDialog();
+                            if (openDialogResult == DialogResult.OK)
+                            {
+                                using (var file = new FileStream(openDialog.FileName, FileMode.Open))
+                                {
+                                    using (var streamReader = new StreamReader(file))
+                                        jsonFromFile = streamReader.ReadToEnd();
+                                }
+                            }
+                            Collection = new JsonFormatter().FromJson<List<Person>>(jsonFromFile);
 
                             break;
                         case Commands.ToXml:
