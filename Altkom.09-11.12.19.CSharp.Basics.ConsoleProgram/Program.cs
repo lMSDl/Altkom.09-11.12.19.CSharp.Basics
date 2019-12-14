@@ -75,7 +75,7 @@ namespace Altkom._09_11._12._19.CSharp.Basics.ConsoleProgram
 
                 //WriteLine(string.Join("\n", filteredCollection));
 
-                //Przykład krotki: var krotka = new {identifier = Collection[0].Id, Collection[0].LastName };
+                //Przykład krotki: var krotka = (identifier = Collection[0].Id, Collection[0].LastName);
                 
                 line = Console.ReadLine();
                 var splitedLine = line.Split(' ');
